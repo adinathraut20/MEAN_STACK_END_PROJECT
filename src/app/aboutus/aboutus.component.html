@@ -1,0 +1,11 @@
+<div class="container-fluid justify-content-center align-items-center bg-dark-gray">
+    <div class="row justify-content-center flex-column align-items-center">
+        <button class="btn btn-danger" (click)="makeAjaxCall()">Ajax Call</button>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-center flex-column align-items-center" *ngFor="let items of list"
+        style="height:50px">
+        <div class="col-6 bg-light shadow-lg mt-3" id="b1">{{items.title}}</div>
+    </div>
+</div>

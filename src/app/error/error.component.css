@@ -1,0 +1,8 @@
+.sw img {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 30%;
+    top: 50px;
+    border-radius: 15px;
+}

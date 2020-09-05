@@ -1,0 +1,80 @@
+<div class="d-flex flex-column h-100">
+    <header>
+        <!-- Fixed navbar -->
+
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark " style="height: 80px;">
+            <a class="navbar-brand font-weight-bold text-light" style="font-size:32px;padding-right: 30px; "><i
+                    class="fas fa-book-reader font-info"></i> A2-demy</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarCollapse"
+                style="font-size:1.6rem; font-family: sans-serif;">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item disabled current">
+                        <a class="nav-link disabled" routerLink="">Home <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item disabled current">
+                        <a class="nav-link disabled" routerLink="/course">Courses<span
+                                class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item active current">
+                        <a class="nav-link" routerLink="/contact-us">Contact Us<span
+                                class="sr-only">(current)</span></a>
+                    </li>
+
+
+
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+
+                    <button class="btn btn-danger my-2 my-sm-0" routerLink="/register">SignUp</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container-fluid mt-5 rounded">
+        <div class="row justify-content-center align-items-center mt-5 rounded">
+            <div class="col-10 col-md-5 shadow-lg justify-content-center rounded align-items-center my-4"
+                style="background-color: rgba(235, 235, 235, 0.8);">
+                <h1 style="text-align: center; margin-top: 30px; margin-bottom: 30px ;">
+                    Login</h1>
+                <form [formGroup]="myFormGroup" class="row justify-content-center align-items-center" method="POST"
+                    action="">
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                        <div class="was-validated" style="width:50%;">
+
+                            <label for="emailid">Username or Email</label>
+                            <input formControlName="emailid" type="text" name="emailid" class="form-control mb-4 border"
+                                value="" id="emailid" placeholder="Username or Email"
+                                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" maxlength="50" minlength="6"
+                                required />
+
+                            <label for="password1">Password</label>
+                            <input formControlName="password" type="password" name="password" id="password1"
+                                class="form-control mb-4 border" id="" placeholder="Password" value="" pattern="[\S]+"
+                                minlength="6" maxlength="15" required />
+
+                            <input [disabled]="!myFormGroup.valid" type="submit" class="btn btn-success my-4"
+                                (click)="loginProcessHere()" name="" id="" value="Login" style="width:100%;">
+
+                            <small id="helpId" class="form-text text-muted d-flex justify-content-center"><a
+                                    routerLink="/error">Forgot Password?</a></small>
+                            <small id="helpId" class="form-text text-muted d-flex justify-content-center mt-3 mb-5"><a
+                                    routerLink="/register">Create New Account</a></small>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div>{{myFormGroup.value | json }} / {{ myFormGroup.valid}}</div> -->
+
+</div>
